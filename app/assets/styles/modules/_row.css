@@ -1,0 +1,75 @@
+.row {
+
+	/* the css selector below creates blank space after all of the content in the main .row div. Then we can clear the floats, letting the row div know what it's height should be. Display: table is only for added browser support. This will be moved to a mixin, so it can be reused later if needed. 
+	
+	&::after { 
+		content: "";
+		clear: both;
+		display: table; 
+	} 
+	--------------------------------------------*/
+
+	@mixin clearfix; /* this is the clearfix mixin originally defined with &::after, in the comment above; */
+
+	&--gutters > div { /* create horizontal margins between columns on all direct children that use a tag of 'div' */
+	padding-right: 65px;
+	}
+
+	&--gutters { /* this counteracts the padding-right of the div:last-child;, because the last column does not need right side padding. But the row should have been constrained by the width of the wrapper. Now it overflows, so we need to apply overflow: hidden; to the wrapper class. */
+		margin-right: -65px;
+	}
+
+	&__b-margin-until-medium { /* adds bottom margin for mobile size */
+		margin-bottom: 1rem;
+	}
+
+	
+	@mixin atMedium { /* baseline is for a single column layout. At medium screen size and above, go to 2 column layout */
+
+		&__b-margin-until-medium {
+			margin-bottom: 0;
+		}
+
+		&__medium-4 {  
+			float: left;
+			width: 33.33%;
+		}
+
+		&__medium-4--larger {
+			width: 37%;
+		}
+
+		&__medium-8 {
+			float: left;
+			width: 66.66%;
+		}
+
+		&__medium-8--smaller {
+			width: 63%;
+		}
+	}
+
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

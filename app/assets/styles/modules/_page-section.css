@@ -1,0 +1,14 @@
+/* this pattern will add top and bottom padding for each section on the page */
+
+.page-section {
+	padding: 1.2rem 0;
+
+	@mixin atMedium { /* at a larger screen size, increase the vertical padding */
+		padding: 4.5rem 0;
+	}
+
+	&--blue {
+		background-color: $mainBlue;
+		color: #fff;
+	}
+}
