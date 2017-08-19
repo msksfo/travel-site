@@ -692,8 +692,16 @@ a {
 	} 
 	--------------------------------------------*/
 
+.row--gutters-large > div { /* this serves the same pupose as --gutters > div, above */
+		padding-right: 100px;
+	}
+
 .row--gutters { /* this counteracts the padding-right of the div:last-child;, because the last column does not need right side padding. But the row should have been constrained by the width of the wrapper. Now it overflows, so we need to apply overflow: hidden; to the wrapper class. */
 		margin-right: -65px;
+	}
+
+.row--gutters-large { /* this serves the same purpose as --gutters, above. */
+		margin-right: -100px;
 	}
 
 .row__b-margin-until-medium { /* adds bottom margin for mobile size */
@@ -721,6 +729,11 @@ a {
 			width: 37%;
 		}
 
+		.row__medium-6 {
+			float: left;
+			width: 50%;
+		}
+
 		.row__medium-8 {
 			float: left;
 			width: 66.66%;
@@ -731,8 +744,9 @@ a {
 		}}
 
 .generic-content-container p {
+		font-weight: 300;
 		line-height: 1.65; /* line height does not require a unit of measurement  */
-		margin: 1.8rem 0;
+		margin: 0 0 1.8rem 0; /* only bottom margin is applied */
 	}
 
 /* define (create) a mixin that passes styles along only to screens larger than smartphone size */
@@ -747,4 +761,98 @@ a {
 		font-weight: 700;
 	}
 
+.section-title {
+	font-size: 2.55rem;
+	font-weight: 300;
+	text-align: center;
+
+	
+
+}
+
+/* define (create) a mixin that passes styles along only to screens larger than smartphone size */
+
+@media all and (min-width: 530px){
+
+.section-title {
+		font-size: 3.75rem
+
+	
+
+}}
+
+.section-title strong {
+		font-weight: 500;
+	}
+
+.section-title__icon {
+		display: block; /* put the star on it's own line for mobile view */
+		margin-right: auto; /* center the star */
+		margin-left: auto;
+		margin-bottom: .6rem; /* give vertical spacing between star and title */
+
+
+	}
+
+/* define (create) a mixin that passes styles along only to screens larger than smartphone size */
+
+@media all and (min-width: 530px){
+
+.section-title__icon { /* put the star on the same line at title for larger than mobile view */
+			margin-right: .5rem;
+			display: inline-block;
+			margin-left: 0;
+			margin-bottom: 0
+
+
+	}}
+
+.feature-item {
+	position: relative; /* this is necessary so that the icon can be positioned absolutely in the top left corner of the feature-item div */
+	padding-bottom: 2.5rem;
+
+}
+
+/* define (create) a mixin that passes styles along only to screens larger than smartphone size */
+
+@media all and (min-width: 530px){
+
+.feature-item {
+		padding-left: 94px /* this pushes the whole feature-item div to the right. */
+
+}}
+
+/* gives vertical spacing between items */
+
+.feature-item__icon { /* on mobile view (baseline), make the icon a block element so we can center align it */
+	 	display: block;
+	 	margin: 0 auto;
+	 }
+
+/* define (create) a mixin that passes styles along only to screens larger than smartphone size */
+
+@media all and (min-width: 530px){
+
+.feature-item__icon { 
+	 		position: absolute;
+	 		left: 0
+	 }}
+
+.feature-item__title {
+	 	font-size: 1.6rem;
+	 	font-weight: 300;
+	 	margin-bottom: .8rem;
+	 	margin-top: .7em;
+	 	text-align: center;
+	 }
+
+/* define (create) a mixin that passes styles along only to screens larger than smartphone size */
+
+@media all and (min-width: 530px){
+
+.feature-item__title {
+	 		margin-top: 1em;
+	 		font-size: 1.875rem;
+	 		text-align: left
+	 }}
 

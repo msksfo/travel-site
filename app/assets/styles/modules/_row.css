@@ -15,8 +15,16 @@
 	padding-right: 65px;
 	}
 
+	&--gutters-large > div { /* this serves the same pupose as --gutters > div, above */
+		padding-right: 100px;
+	}
+
 	&--gutters { /* this counteracts the padding-right of the div:last-child;, because the last column does not need right side padding. But the row should have been constrained by the width of the wrapper. Now it overflows, so we need to apply overflow: hidden; to the wrapper class. */
 		margin-right: -65px;
+	}
+
+	&--gutters-large { /* this serves the same purpose as --gutters, above. */
+		margin-right: -100px;
 	}
 
 	&__b-margin-until-medium { /* adds bottom margin for mobile size */
@@ -37,6 +45,11 @@
 
 		&__medium-4--larger {
 			width: 37%;
+		}
+
+		&__medium-6 {
+			float: left;
+			width: 50%;
 		}
 
 		&__medium-8 {
