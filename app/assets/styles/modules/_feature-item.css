@@ -1,0 +1,33 @@
+.feature-item {
+	position: relative; /* this is necessary so that the icon can be positioned absolutely in the top left corner of the feature-item div */
+	padding-bottom: 2.5rem; /* gives vertical spacing between items */
+
+	@mixin atSmall {
+		padding-left: 94px; /* this pushes the whole feature-item div to the right. */
+	}
+
+	 &__icon { /* on mobile view (baseline), make the icon a block element so we can center align it */
+	 	display: block;
+	 	margin: 0 auto;
+
+	 	@mixin atSmall { 
+	 		position: absolute;
+	 		left: 0;
+	 	}
+	 }
+
+	 &__title {
+	 	font-size: 1.6rem;
+	 	font-weight: 300;
+	 	margin-bottom: .8rem;
+	 	margin-top: .7em;
+	 	text-align: center;
+
+	 	@mixin atSmall {
+	 		margin-top: 1em;
+	 		font-size: 1.875rem;
+	 		text-align: left;
+	 	}
+	 }
+
+}
