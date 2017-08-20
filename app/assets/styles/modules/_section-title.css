@@ -11,6 +11,10 @@
 		font-weight: 500;
 	}
 
+	&--blue {
+		color: $mainBlue;
+	}
+
 	&__icon {
 		display: block; /* put the star on it's own line for mobile view */
 		margin-right: auto; /* center the star */
@@ -22,6 +26,8 @@
 			display: inline-block;
 			margin-left: 0;
 			margin-bottom: 0;
+			position: relative;
+			top: 8px;
 		}
 
 

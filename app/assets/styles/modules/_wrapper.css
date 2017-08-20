@@ -12,6 +12,26 @@
 		max-width: 976px;
 	}
 
+	&--no-padding-until-medium { /* on small screens we want to use the full width of the screen */
+		padding-left: 0;
+		padding-right: 0;
+
+		@mixin atMedium { /* at medium size, add the padding back in */
+			padding-left: 18px;
+			padding-right: 18px;
+		}
+	}
+
+	&--no-padding-until-large { /* on small screens we want to use the full width of the screen */
+		padding-left: 0;
+		padding-right: 0;
+
+		@mixin atLarge { /* at large size, add the padding back in */
+			padding-left: 18px;
+			padding-right: 18px;
+		}
+	}
+
 	.wrapper { /* negate the padding of anything with class of wrapper that is NESTED within something else with class wrapper. so you only have 18px of padding, not 36px */
 		padding-left: 0;
 		padding-right: 0;
