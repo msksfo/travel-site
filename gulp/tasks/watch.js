@@ -24,11 +24,42 @@ gulp.task('watch', function(){
 	watch('./app/assets/styles/**/*.css', function(){ // * means any file. *.js means any file with the js extension. *.css means any file with the css extension. ** is for the directory/folder. styles/**/*.css will take any css file in an styles folder, no matter how deep it is nested. This is configured to watch for any saved changes in any css file, at which time gulp will run the 'cssInject' task.
 		// gulp.start('styles'); now 'styles' is replaces by 'cssInject', and we include 'styles' as a third argument, a dependency, in the cssInject gulp task below
 		gulp.start('cssInject');
+	});
+
+	watch('./app/assets/scripts/**/*.js', function(){
+		gulp.start('scriptsRefresh');
 	})
-})
+});
+
+
 
 gulp.task('cssInject', ['styles'], function(){ // ['styles'] is a dependency. so before gulp runs the cssInject task, it has to run and complete any dependencies ('styles'). ----> the compiled css file gets generated BEFORE it is handed off to broswerSync to update the changes.
 	// this task will take the contents of the compiled css file, hand it over to browserSync so it can inject those styles into the page in real time (no browser refresh needed)
 	return gulp.src('./app/temp/styles/styles.css')
 	.pipe(browserSync.stream());
 });
+
+gulp.task('scriptsRefresh', ['scripts'], function(){
+	browserSync.reload();
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

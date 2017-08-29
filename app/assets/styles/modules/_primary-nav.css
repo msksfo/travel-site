@@ -1,0 +1,71 @@
+.primary-nav {
+	padding-top: 10px;
+
+	@mixin atMedium {
+		padding-top: 0;
+	}
+
+	&--pull-right {
+
+		@mixin atMedium {
+			float: right;
+		}
+		
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		@mixin clearfix; /* use this because the li's are floated */
+	}
+
+	li {
+		list-style: none; /* remove the bullet points */
+		padding-right: 7px;
+		display: inline-block; /* this will make the list items horizontally centered */
+
+		@mixin atMedium {
+			float: left; /* make the list items sit on one line */
+			display: block;
+			padding-right: 20px;
+		}
+	}
+
+	li:last-child {
+		padding-right: 0;
+
+		@mixin atMedium {
+			padding-right: 20px;
+		}
+	}
+
+	a {
+		color: #fff;
+		text-decoration: none;
+		font-weight: 300;
+		display: block;
+		padding: 5px 8px;
+		font-size: .8rem;
+		background-color: rgba($mainBlue, .5);
+
+		@mixin atMedium {
+			padding: 12px 0;
+			font-size: 1rem;
+			background-color: transparent;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
