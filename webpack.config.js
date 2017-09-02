@@ -1,7 +1,7 @@
 // create an object that tells webpack what to do
 
 // 'path' is a native part of the node js environment. no need to install. it's built into node
-//var path = require('path');
+var path = require('path');
 
 module.exports = {
 
