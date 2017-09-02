@@ -469,6 +469,10 @@ a {
 	color: #d59541;
 }
 
+.reveal-item {
+	opacity: 0;
+}
+
 .large-hero {
 	border-bottom: 10px solid #2f5572;
 	position: relative;
@@ -1377,6 +1381,7 @@ a {
 			font-size: 1rem;
 			background-color: transparent
 	}}
+
 
 
 

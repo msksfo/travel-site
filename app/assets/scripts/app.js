@@ -22,9 +22,11 @@ jane.payTaxes();
 */
 
 import MobileMenu from './modules/MobileMenu';
+import RevealOnScroll from "./modules/RevealOnScroll";
 
 //create a new object that uses this class as a blueprint. save it to a variable to use repeatedly.
 var mobileMenu = new MobileMenu();
+var revealOnScroll = new RevealOnScroll();
 
 
 
