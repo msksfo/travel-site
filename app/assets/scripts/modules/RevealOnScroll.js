@@ -27,7 +27,7 @@ class RevealOnScroll {
 					$(currentItem).addClass('reveal-item--is-visible');
 				},
 				offset: '85%'
-			};
+			});
 		});
 	}
 }
