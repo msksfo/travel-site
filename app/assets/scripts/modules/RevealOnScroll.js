@@ -21,8 +21,10 @@ class RevealOnScroll {
 	createWaypoints(){
 		this.itemsToReveal.each(function(){
 			var currentItem = this;
-			new Waypoint({
-				element: currentItem,  // the dom element to watch for as we scroll down
+			
+			new Waypoint({ // each Waypoint object needs at least these 2 properties
+				element: currentItem,  // the dom element to watch for as we scroll down --> whichever dom element is currently being looped through
+
 				handler: function(){ // what we want to happen when the element is scrolled to --> add the css modifyer so that it gradually becomes visible
 					$(currentItem).addClass('reveal-item--is-visible');
 				},
