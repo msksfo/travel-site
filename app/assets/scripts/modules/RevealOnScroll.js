@@ -5,9 +5,10 @@ import $ from "jquery"; // this will automatically work as long as jquery is in 
 import waypoints from '../../../../node_modules/waypoints/lib/noframework.waypoints';
 
 class RevealOnScroll {
-	constructor() {
+	constructor(els, offset) { // 2 parameters: element(s) and offset
 		// select the items to reveal when scrolled to. this is a collection of elements with references to the four dom elements on the page that have the class of feature-item
-		this.itemsToReveal = $(".feature-item");
+		this.itemsToReveal = els;
+		this.offsetPercentage = offset;
 		this.hideInitially(); // we want this to run on page load
 		this.createWaypoints(); // we want this function to run on page load
 	}
@@ -19,6 +20,7 @@ class RevealOnScroll {
 	}
 
 	createWaypoints(){
+		var that = this;
 		this.itemsToReveal.each(function(){
 			var currentItem = this;
 			
@@ -28,7 +30,7 @@ class RevealOnScroll {
 				handler: function(){ // what we want to happen when the element is scrolled to --> add the css modifyer so that it gradually becomes visible
 					$(currentItem).addClass('reveal-item--is-visible');
 				},
-				offset: '85%'
+				offset: that.offsetPercentage
 			});
 		});
 	}
