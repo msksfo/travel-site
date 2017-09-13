@@ -27,6 +27,7 @@ import $ from 'jquery';
 import StickyHeader from './modules/StickyHeader';
 import Modal from './modules/Modal';
 
+
 //create a new object that uses this class as a blueprint. save it to a variable to use repeatedly.
 var mobileMenu = new MobileMenu();
 

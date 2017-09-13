@@ -692,9 +692,12 @@ a {
 
 .page-section--testimonials { /* at large size apply a background image */
 			/*put the background image, horizontally aligned to the center, vertically aligned top */
-			background: url('../../assets/images/testimonials-bg.jpg') top center no-repeat;
-			background-size: cover /* this will shrink or stretch the image to perfectly cover the containing div */
-	}}
+	}
+			
+			.page-section--testimonials.lazyloaded {
+				background: url('../../assets/images/testimonials-bg.jpg') top center no-repeat;
+				background-size: cover; /* this will shrink or stretch the image to perfectly cover the containing div */
+			}}
 
 .headline {
 	font-weight: 300;
