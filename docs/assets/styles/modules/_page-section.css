@@ -1,0 +1,43 @@
+/* this pattern will add top and bottom padding for each section on the page */
+
+.page-section {
+	padding: 1.2rem 0;
+
+	@mixin atMedium { /* at a larger screen size, increase the vertical padding */
+		padding: 4.5rem 0;
+	}
+
+	&--no-b-padding-until-medium {
+		padding-bottom: 0;
+
+		@mixin atMedium {
+			padding-bottom: 4.5rem;
+		}
+	}
+
+	&--no-b-padding-until-large {
+		padding-bottom: 0;
+
+		@mixin atLarge {
+			padding-bottom: 4.5rem;
+		}
+	}
+
+	&--blue {
+		background-color: $mainBlue;
+		color: #fff;
+	}
+
+	&--testimonials {
+		background-color: #e0e6ef;
+		
+		@mixin atLarge { /* at large size apply a background image */
+			/*put the background image, horizontally aligned to the center, vertically aligned top */
+			
+			&.lazyloaded {
+				background: url('../../assets/images/testimonials-bg.jpg') top center no-repeat;
+				background-size: cover; /* this will shrink or stretch the image to perfectly cover the containing div */
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+
+.btn {
+	color: #fff;
+	background-color: $mainBlue;
+	text-decoration: none;
+	padding: .75rem 1.2rem; /* since i'm using padding i should also set display to inline block so that it's parent and surrounding elements will be aware of it's veritcal padding */
+	display: inline-block;
+
+
+	&--orange {
+		background-color: $mainOrange;
+	}
+
+	&--large {
+		padding: 1.1rem 1.9rem;
+	}
+
+	@mixin atSmall {
+		font-size: 1.25rem;
+	}
+}

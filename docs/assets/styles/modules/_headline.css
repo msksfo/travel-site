@@ -1,0 +1,68 @@
+.headline {
+	font-weight: 300;
+	font-size: 1.9rem; /* baseine font size for mobile screens */
+	color: $mainBlue;
+
+	@mixin atSmall { /* make the font size bigger on slightly larger screen sizes (non mobile) */
+		font-size: 2.875rem;
+	}
+
+	&--centered {
+		text-align: center;
+	}
+
+	&--orange {
+		color: $mainOrange;
+	}
+
+	&--small {
+		font-size: 1.2rem;
+	}
+
+	@mixin atSmall {
+		font-size: 1.875rem;
+	}
+
+	&--narrow {
+		max-width: 500px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	&--light {
+		font-weight: 100;
+	}
+
+	&--b-margin-small {  /* define margin on text elements in em, because it's relative to the font size of the element itself ----> it can be reused and it will scale nicely. */
+		margin-bottom: .5em;
+	}
+
+	&---b-margin-large {
+		margin-bottom: 1.6em;
+	}
+
+	&--no-t-margin {
+		margin-top: 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

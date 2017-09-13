@@ -1,0 +1,47 @@
+
+@define-mixin atSmall { /* define (create) a mixin that passes styles along only to screens larger than smartphone size */
+	@media all and (min-width: 530px){
+		@mixin-content
+	}
+}
+
+@define-mixin atMedium {
+	@media all and (min-width: 800px){
+		@mixin-content
+	}
+}
+
+@define-mixin atLarge {
+	@media all and (min-width: 1010px){
+		@mixin-content
+	}
+}
+
+@define-mixin clearfix {
+	/* the css selector below creates blank space after all of the content in the main .row div. Then we can clear the floats, letting the row div know what it's height should be. This was originally in the _row.css file, but was moved to a mixin, so it can be reused later if needed. */
+	
+	&::after { 
+		content: "";
+		clear: both;
+		display: table; /* this is only for added browser support */
+	} 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

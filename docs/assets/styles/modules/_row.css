@@ -1,0 +1,158 @@
+.row {
+
+	/* the css selector below creates blank space after all of the content in the main .row div. Then we can clear the floats, letting the row div know what it's height should be. Display: table is only for added browser support. This will be moved to a mixin, so it can be reused later if needed. 
+	
+	&::after { 
+		content: "";
+		clear: both;
+		display: table; 
+	} 
+	--------------------------------------------*/
+
+	@mixin clearfix; /* this is the clearfix mixin originally defined with &::after, in the comment above; */
+
+	&--t-padding {
+		padding-top: 80px;
+	}
+
+	&--gutters > div { /* create horizontal margins between columns on all direct children that use a tag of 'div' */
+	padding-right: 65px;
+	}
+
+	&--gutters-large > div { /* this serves the same pupose as --gutters > div, above */
+		padding-right: 100px;
+	}
+
+	&--gutters-small > div {
+		padding-right: 45px;
+	}
+
+
+
+	&--gutters { /* this counteracts the padding-right of the div:last-child;, because the last column does not need right side padding. But the row should have been constrained by the width of the wrapper. Now it overflows, so we need to apply overflow: hidden; to the wrapper class. */
+		margin-right: -65px;
+	}
+
+	&--gutters-large { /* this serves the same purpose as --gutters, above. */
+		margin-right: -100px;
+	}
+
+	&--gutters-small {
+		margin-right: -45px;
+	}
+
+	&__b-margin-until-medium { /* adds bottom margin for mobile size */
+		margin-bottom: 1rem;
+	}
+
+	
+	@mixin atMedium { /* baseline is for a single column layout. At medium screen size and above, go to 2 column layout */
+
+		&__b-margin-until-medium {
+			margin-bottom: 0;
+		}
+
+		&__medium-4 {  
+			float: left;
+			width: 33.33%;
+		}
+
+		&__medium-4--larger {
+			width: 37%;
+		}
+
+		&__medium-6 {
+			float: left;
+			width: 50%;
+		}
+
+		&__medium-8 {
+			float: left;
+			width: 66.66%;
+		}
+
+		&__medium-8--smaller {
+			width: 63%;
+		}
+	}
+
+	@mixin atLarge { /* baseline is for a single column layout. At large screen size and above, go to 2 column layout */
+
+		&__b-margin-until-large {
+			margin-bottom: 0;
+		}
+
+		&__large-4 {  
+			float: left;
+			width: 33.33%;
+		}
+
+		&__large-4--larger {
+			width: 37%;
+		}
+
+		&__large-6 {
+			float: left;
+			width: 50%;
+		}
+
+		&__large-8 {
+			float: left;
+			width: 66.66%;
+		}
+
+		&__large-8--smaller {
+			width: 63%;
+		}
+	}
+
+	/* begin equal height rules */
+
+	.flexbox &--equal-height-at-medium {
+
+		@mixin atMedium { /* at medium and larger, make testimonial boxes the same height */
+			display: flex;
+		}
+
+		& > div { /* also apply display flex to the div children of --equal-height-at-medium divs */
+			display: flex;
+			float: none; /* if using flexbox we don't need to float */
+
+		}
+	}
+
+	.flexbox &--equal-height-at-large {
+
+		@mixin atLarge { /* at large and larger, make testimonial boxes the same height */
+			display: flex;
+		}
+
+		& > div { /* also apply display flex to the div children of --equal-height-at-medium divs */
+			display: flex;
+			float: none; /* if using flexbox we don't need to float */
+
+		}
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+/* this class centers content in the middle 1200px of the page */
+
+.wrapper {
+	padding-left: 18px;
+	padding-right: 18px;
+	max-width: 1236px;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: hidden;
+
+	&--medium { /* a modification to the wrapper class to make it a narrower width */
+		max-width: 976px;
+	}
+
+	&--narrow {
+		max-width: 470px;
+	}
+
+	&--no-padding-until-medium { /* on small screens we want to use the full width of the screen */
+		padding-left: 0;
+		padding-right: 0;
+
+		@mixin atMedium { /* at medium size, add the padding back in */
+			padding-left: 18px;
+			padding-right: 18px;
+		}
+	}
+
+	&--no-padding-until-large { /* on small screens we want to use the full width of the screen */
+		padding-left: 0;
+		padding-right: 0;
+
+		@mixin atLarge { /* at large size, add the padding back in */
+			padding-left: 18px;
+			padding-right: 18px;
+		}
+	}
+
+	.wrapper { /* negate the padding of anything with class of wrapper that is NESTED within something else with class wrapper. so you only have 18px of padding, not 36px */
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	&--b-margin {
+		margin-bottom: 1rem; /* baseline margin for mobile screens */
+
+		@mixin atSmall { /* more bottom margin for screens larger than mobile */
+			margin-bottom: 3.875rem;
+		}
+	}
+}

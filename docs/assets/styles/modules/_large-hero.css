@@ -1,0 +1,77 @@
+.large-hero {
+	border-bottom: 10px solid $mainBlue;
+	position: relative;
+
+	&__text-content {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%); /* position an element vertically, relative to itself. 50% will move it down 50% of it's own height.   -50% will move it up 50% of it's own height. */
+		left: 0;
+		width: 100%;
+		text-align: center;
+		padding-top: 88px;
+
+		@mixin atMedium {
+			padding-top: 60px;
+		}
+	}
+
+	&__image {
+		width: 100%;
+		display: block; /* by default browsers treat images as inline. display block will treat it as a rectangle than can align perfectly---> no gap between image and bottom border on .large-hero */
+	}
+
+	&__title {
+		font-weight: 300;
+		color: $mainBlue;
+		font-size: 2.4rem;
+		margin: 0;
+
+		@mixin atSmall {
+			font-size: 4.8rem;
+		}
+	}
+
+	&__subtitle {
+		font-weight: 300;
+		color: $mainBlue;
+		font-size: 1.5rem;
+		margin: 0;
+
+		@mixin atSmall {
+			font-size: 2.9rem;
+		}
+
+	}
+
+	&__description {
+		color: #fff;
+		font-size: 1.1rem; 
+		font-weight: 100;
+		text-shadow: 2px 2px 0 rgba(0, 0, 0, .1);
+
+		max-width: 30rem; /* max-width forces the text to wrap to the next line */
+		margin-left: auto; /* margin left/right: auto will center the block on the page */
+		margin-right: auto;
+
+		@mixin atSmall {
+			font-size: 1.875rem;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
