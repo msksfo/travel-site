@@ -12,6 +12,10 @@
 		max-width: 976px;
 	}
 
+	&--narrow {
+		max-width: 470px;
+	}
+
 	&--no-padding-until-medium { /* on small screens we want to use the full width of the screen */
 		padding-left: 0;
 		padding-right: 0;
